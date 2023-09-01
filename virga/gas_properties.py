@@ -400,3 +400,31 @@ def Na2S(mw_atmos, mh = 1, gas_mmr = None):
 	rho_p =  1.856
 	return gas_mw, gas_mmr, rho_p
 
+def CaTiO3(mw_atmos, mh=1, gas_mmr = None):
+        """Defines properties for CaTiO3 as condensible
+
+        Parameters
+        ----------
+        mw_atmos : float
+                Mean molecular weight of the atmosphere amu
+        gas_mmr : float , optional
+                Gas mass mixing ratio.
+                None points to the default value of : 1.69e-7
+        mh : float , optional
+                Metallicity, Default is 1=1xSolar
+
+        Returns
+        -------
+        mean molecular weight of gas,
+        gas mass mixing ratio
+        density of gas cgs
+        """
+        if mh != 1: raise Exception("Alert: No M/H Dependence in CaTiO3 Routine. Consult your local theorist to determine next steps.")
+        if isinstance(gas_mmr, type(None)):
+                gas_mmr = 1.69e-7 * mh
+        # webmineral.com
+        gas_mw = 135.96
+        gas_mmr = gas_mmr * (gas_mw/mw_atmos)
+        # webmineral.com
+        rho_p =  4.
+        return gas_mw, gas_mmr, rho_p

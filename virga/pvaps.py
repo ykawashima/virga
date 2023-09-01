@@ -369,3 +369,24 @@ def Al2O3(temp,mh = 1 ):
 	#calculated from wakeford 2017
 	pvap_al2o3 = 1e6 * 10.0 ** (17.7 - 45892.6/temp - 1.66*mh)
 	return pvap_al2o3
+
+def CaTiO3(temp, mh = 1 ):
+        """Computes vapor pressure curve
+
+        Parameters
+        ----------
+        temp : float, ndarray
+                Temperature (K)
+        mh : float
+                NON log metallicity relative to solar (1=1Xsolar)
+
+        Returns
+        -------
+        vapor pressure in dyne/cm^2
+        """
+        mh = np.log10(mh)
+        #CaTiO3 vapor pressure above cloud from Eq. (7) of Wakeford et al. (2017)
+        pvap_catio3 = 10.0**((5.125 - 1.e4/temp - 0.554*mh)/0.277.)
+        #convert bars -> dynes/cm^2
+        pvap_catio3 = 1e6 * pvap_catio3
+        return pvap_catio3
