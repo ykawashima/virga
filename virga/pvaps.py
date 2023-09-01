@@ -14,7 +14,7 @@ def TiO2(temp, mh = 1 ):
 	-------
 	vapor pressure in dyne/cm^2
 	"""
-	if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for TiO2")
+	# if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for TiO2")
 
 	return 1e6 * 10. ** (9.5489 - 32456.8678/temp)
 
@@ -32,7 +32,7 @@ def Cr(temp, mh = 1 ):
 	-------
 	vapor pressure in dyne/cm^2
 	"""
-	if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for Cr")
+	# if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for Cr")
 	mh = np.log10(mh)
 	#Cr vapor pressure above cloud 
 	pvap_cr_bars = 10.0**(7.2688-20353./temp)
@@ -75,7 +75,7 @@ def NH3(temp, mh = 1 ):
 	-------
 	vapor pressure in dyne/cm^2
 	"""
-	if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for NH3")
+	# if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for NH3")
 	mh = np.log10(mh)
 	#NH3 vapor pressure above cloud 
 	pvap_nh3 = np.exp(-86596./temp**2 - 2161./temp + 10.53)
@@ -185,7 +185,7 @@ def KCl(temp, mh = 1 ):
 	-------
 	vapor pressure in dyne/cm^2
 	"""
-	if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for KCl")
+	# if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for KCl")
 	mh = np.log10(mh)
 	pvap_kcl_bars = 10.0**(7.6106 - 11382./temp)
 	#Then convert from bars to dynes/cm^2    
@@ -209,7 +209,7 @@ def H2O(temp,do_buck = True,mh = 1 ):
 	-------
 	vapor pressure in dyne/cm^2
 	"""
-	if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for H2O")
+	# if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for H2O")
 	mh = np.log10(mh)
 	if isinstance(temp, float): temp=np.array([temp]) 
 	pvap_h2o = np.zeros(len(temp))
@@ -288,7 +288,7 @@ def Fe(temp,mh = 1 ):
 	-------
 	vapor pressure in dyne/cm^2
 	"""
-	if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for Fe")
+	# if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for Fe")
 	mh = np.log10(mh)
 	#EXPRESSION from Channon Visscher, correspondance on 6/3/11, added 7/27/11 (cvm)
 	pvap_fe = 10.0**(7.09-20833./temp)
@@ -309,7 +309,7 @@ def CH4(temp,mh = 1 ):
 	-------
 	vapor pressure in dyne/cm^2
 	"""
-	if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for CH4")
+	# if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for CH4")
 	mh = np.log10(mh)
 
 	#	  AMR   -- molecular weight / ideal gas constant
@@ -362,7 +362,7 @@ def Al2O3(temp,mh = 1 ):
 	-------
 	vapor pressure in dyne/cm^2
 	"""
-	if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for Al2O3")
+	# if mh != 1 : raise Exception("Warning: no M/H Dependence in vapor pressure curve for Al2O3")
 	mh = np.log10(mh)
 	#Kozasa et al. Ap J. 344 325
 	#return np.exp(-73503./temp + 22.01)*1e6

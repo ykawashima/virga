@@ -17,7 +17,7 @@ def TiO2(mw_atmos, mh=1, gas_mmr = None):
 	gas mass mixing ratio 
 	density of gas cgs
 	"""
-	if mh != 1: raise Exception("Alert: No M/H Dependence in TiO2 Routine. Consult your local theorist to determine next steps.")
+	# if mh != 1: raise Exception("Alert: No M/H Dependence in TiO2 Routine. Consult your local theorist to determine next steps.")
 	if isinstance(gas_mmr, type(None)):
 		gas_mmr = 1.69e-7 * mh
 	gas_mw = 80
@@ -44,7 +44,7 @@ def CH4(mw_atmos , mh = 1,gas_mmr = None):
 	gas mass mixing ratio 
 	density of gas cgs
 	"""
-	if mh != 1: raise Exception("Alert: No M/H Dependence in CH4 Routine. Consult your local theorist to determine next steps.")
+	# if mh != 1: raise Exception("Alert: No M/H Dependence in CH4 Routine. Consult your local theorist to determine next steps.")
 	
 	if isinstance(gas_mmr, type(None)):
 		gas_mmr = 4.9e-4 * mh
@@ -75,7 +75,7 @@ def NH3(mw_atmos, mh = 1, gas_mmr = None):
 	gas mass mixing ratio 
 	density of gas cgs
 	"""
-	if mh != 1: raise Exception("Alert: No M/H Dependence in NH3 Routine. Consult your local theorist to determine next steps.")
+	# if mh != 1: raise Exception("Alert: No M/H Dependence in NH3 Routine. Consult your local theorist to determine next steps.")
 	if isinstance(gas_mmr, type(None)):
 		gas_mmr = 1.34e-4 * mh
 
@@ -105,7 +105,7 @@ def H2O(mw_atmos, mh = 1, gas_mmr = None):
 	gas mass mixing ratio 
 	density of gas cgs
 	"""
-	if mh != 1: raise Exception("Alert: No M/H Dependence in H2O Routine. Consult your local theorist to determine next steps.")
+	# if mh != 1: raise Exception("Alert: No M/H Dependence in H2O Routine. Consult your local theorist to determine next steps.")
 	if isinstance(gas_mmr, type(None)):
 		gas_mmr = 7.54e-4 * mh
 	gas_mw = 18.
@@ -134,7 +134,7 @@ def Fe(mw_atmos,  mh = 1,gas_mmr = None):
 	gas mass mixing ratio 
 	density of gas cgs
 	"""
-	if mh != 1: raise Exception("Alert: No M/H Dependence in Fe Routine. Consult your local theorist to determine next steps.")
+	# if mh != 1: raise Exception("Alert: No M/H Dependence in Fe Routine. Consult your local theorist to determine next steps.")
 	if isinstance(gas_mmr, type(None)):
 		gas_mmr =  5.78e-5 * mh
 	gas_mw = 55.845
@@ -204,7 +204,7 @@ def MgSiO3(mw_atmos, mh = 1, gas_mmr = None):
 	Gas mass mixing ratio 
 	Density of gas cgs
 	"""	
-	if mh != 1: raise Exception("Alert: No M/H Dependence in MgSiO3 Routine. Consult your local theorist to determine next steps.")
+	# if mh != 1: raise Exception("Alert: No M/H Dependence in MgSiO3 Routine. Consult your local theorist to determine next steps.")
 	if isinstance(gas_mmr, type(None)):
 		gas_mmr =  2.75e-3 * mh # Purposefully no MW scaling
 	gas_mw = 100.4
@@ -232,7 +232,7 @@ def Mg2SiO4(mw_atmos, mh = 1,gas_mmr = None,):
 	Gas mass mixing ratio 
 	Density of gas cgs
 	"""	
-	if mh != 1: raise Exception("Alert: No M/H Dependence in Mg2SiO4 Routine. Consult your local theorist to determine next steps.")
+	# if mh != 1: raise Exception("Alert: No M/H Dependence in Mg2SiO4 Routine. Consult your local theorist to determine next steps.")
 	if isinstance(gas_mmr, type(None)):
 		gas_mmr =  59.36e-6 * mh#3.58125e-05
 	gas_mw = 140.7
@@ -361,7 +361,7 @@ def Al2O3(mw_atmos, mh = 1, gas_mmr = None):
 	Gas mass mixing ratio 
 	Density of gas cgs
 	"""		
-	if mh != 1: raise Exception("Alert: No M/H Dependence in Al2O3 Routine. Consult your local theorist to determine next steps.")
+	# if mh != 1: raise Exception("Alert: No M/H Dependence in Al2O3 Routine. Consult your local theorist to determine next steps.")
 	if isinstance(gas_mmr, type(None)):
 		gas_mmr = 2.51e-6
 
@@ -391,7 +391,7 @@ def Na2S(mw_atmos, mh = 1, gas_mmr = None):
 	Gas mass mixing ratio 
 	Density of gas cgs
 	"""		
-	if mh != 1: raise Exception("Alert: No M/H Dependence in Na2S Routine. Consult your local theorist to determine next steps.")
+	# if mh != 1: raise Exception("Alert: No M/H Dependence in Na2S Routine. Consult your local theorist to determine next steps.")
 	if isinstance(gas_mmr, type(None)):
 		gas_mmr = 3.97e-6 
 	gas_mw = 78.05
