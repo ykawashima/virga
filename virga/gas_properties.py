@@ -438,7 +438,7 @@ def Ni(mw_atmos, mh=1, gas_mmr = None):
                 Mean molecular weight of the atmosphere amu
         gas_mmr : float , optional
                 Gas mass mixing ratio.
-                None points to the default value of : 3.17e-6
+                None points to the default value of : 3.17e-6 (Asplund et al. 2021)
         mh : float , optional
                 Metallicity, Default is 1=1xSolar
 
