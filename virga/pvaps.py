@@ -385,8 +385,30 @@ def CaTiO3(temp, mh = 1 ):
         vapor pressure in dyne/cm^2
         """
         mh = np.log10(mh)
-        #CaTiO3 vapor pressure above cloud from Eq. (7) of Wakeford et al. (2017)
+        #CaTiO3 vapor pressure above cloud from Eq.(7) of Wakeford et al. (2017)
         pvap_catio3 = 10.0**((5.125 - 1.e4/temp - 0.554*mh)/0.277.)
-        #convert bars -> dynes/cm^2
+        #convert bars => dynes/cm^2
         pvap_catio3 = 1e6 * pvap_catio3
         return pvap_catio3
+
+def Ni(temp, mh = 1 ):
+        """Computes vapor pressure curve
+
+        Parameters
+        ----------
+        temp : float, ndarray
+                Temperature (K)
+        mh : float
+                NON log metallicity relative to solar (1=1Xsolar)
+
+        Returns
+        -------
+        vapor pressure in dyne/cm^2
+        """
+        mh = np.log10(mh)
+        #Ni vapor pressure above cloud from Eq.(4) of Johnston & Marshall (1940)
+        #valid for 1300-1600 C => 1573-1873 K
+        pvap_ni = -22107./t - 1.31e-4 * t + 7.869 #[atm]
+        #convert atms => bars => dynes/cm^2
+        pvap_ni = 1e6/1.01325  * pvap_ni
+        return pvap_ni
