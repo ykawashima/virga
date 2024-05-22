@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 def TiO2(temp, mh = 1 ):
 	"""Computes vapor pressure curve
@@ -412,3 +413,30 @@ def Ni(temp, mh = 1 ):
         #convert atms => bars => dynes/cm^2
         pvap_ni = 1e6/1.01325  * pvap_ni
         return pvap_ni
+
+def VO(temp, mh = 1 ):
+        """Computes vapor pressure curve
+
+        Parameters
+        ----------
+        temp : float, ndarray
+                Temperature (K)
+        mh : float
+                NON log metallicity relative to solar (1=1Xsolar)
+
+        Returns
+        -------
+        vapor pressure in dyne/cm^2
+        """
+        mh = np.log10(mh)
+        #VO condensation temperature from Mbarek&Kempton2016.pdf
+        df = pd.read_table("condensation_Ts.dat", skiprows=1, sep='\s+')
+     	#total pressure when saturation happens
+        pvap_vo = np.interp(temp, df["VO"], df["Pressure(bars)"])
+		#vapor pressure
+		#account for the abundance assumed in the data file
+		#solar metallicity of Lodders (2003) (table 2)
+        pvap_vo = pvap_vo * 10**(4.07)/10**12
+        #convert bars => dynes/cm^2
+        pvap_vo = 1e6  * pvap_vo
+        return pvap_vo
