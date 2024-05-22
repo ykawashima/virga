@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import os
 
 def TiO2(temp, mh = 1 ):
 	"""Computes vapor pressure curve
@@ -430,7 +431,7 @@ def VO(temp, mh = 1 ):
         """
         mh = np.log10(mh)
         #VO condensation temperature from Mbarek&Kempton2016.pdf
-        df = pd.read_table("condensation_Ts.dat", skiprows=1, sep='\s+')
+        df = pd.read_table(os.path.join(os.path.dirname(__file__), "reference", "condensation_Ts.dat"), skiprows=1, sep='\s+')
      	#total pressure when saturation happens
         pvap_vo = np.interp(temp, df["VO"], df["Pressure(bars)"])
 		#vapor pressure
