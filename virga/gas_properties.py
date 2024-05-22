@@ -483,6 +483,6 @@ def VO(mw_atmos, mh = 1,gas_mmr = None,):
 	# CRC
 	gas_mw = 50.9415 + 15.99903
 	gas_mmr = gas_mmr * (gas_mw/mw_atmos)  
-	# https://en.wikipedia.org/wiki/Vanadium(II)_oxide could not find more reliable source
-	rho_p =  5.758
+	# https://commonchemistry.cas.org/detail?cas_rn=12035-98-2
+	rho_p =  5.5
 	return gas_mw, gas_mmr, rho_p
