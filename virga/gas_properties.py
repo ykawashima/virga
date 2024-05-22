@@ -457,3 +457,32 @@ def Ni(mw_atmos, mh=1, gas_mmr = None):
         # webmineral.com
         rho_p =  8.
         return gas_mw, gas_mmr, rho_p
+
+def VO(mw_atmos, mh = 1,gas_mmr = None,):
+	"""Defines properties for VO as condensible
+	
+	Parameters 
+	----------
+	mw_atmos : float 
+		Mean molecular weight of the atmosphere amu
+	gas_mmr : float , optional
+		Gas mass mixing ratio
+		None points to the default value of : 7.94328235e-09 (Asplund et al. 2021)
+	mh : float , optional
+		Metallicity, Default is 1=1xSolar
+	
+	Returns
+	-------
+	Mean molecular weight of gas,
+	Gas mass mixing ratio 
+	Density of gas cgs
+	"""	
+	# if mh != 1: raise Exception("Alert: No M/H Dependence in Mg2SiO4 Routine. Consult your local theorist to determine next steps.")
+	if isinstance(gas_mmr, type(None)):
+		gas_mmr =  7.94328235e-09 * mh
+	# CRC
+	gas_mw = 50.9415 + 15.99903
+	gas_mmr = gas_mmr * (gas_mw/mw_atmos)  
+	# https://en.wikipedia.org/wiki/Vanadium(II)_oxide could not find more reliable source
+	rho_p =  5.758
+	return gas_mw, gas_mmr, rho_p
