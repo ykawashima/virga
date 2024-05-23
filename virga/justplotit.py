@@ -166,11 +166,11 @@ def radii(out,gas=None,at_pressure = 1e-3, compare=False, legend=None,
         dndr['r'] = r*1e4 #convert to microns
 
         if j==0:
-            p1 = figure(plot_width=p1w, plot_height=p1h, title="Select Pressure Level", 
+            p1 = figure(width=p1w, height=p1h, title="Select Pressure Level", 
                 x_axis_type='log',y_axis_type='log',y_axis_label='Pressure (bars)',x_axis_label='Mean Particle Radius (um)',
                 y_range=[np.max(pressure),np.min(pressure)])
 
-            p2 = figure(plot_width=p2w, plot_height=p2h, title="Particle Distribution at %.0e bars" %at_pressure,
+            p2 = figure(width=p2w, height=p2h, title="Particle Distribution at %.0e bars" %at_pressure,
                          x_axis_type='log', y_axis_type='log', y_axis_label='dn/dr (cm-3)',x_axis_label='Particle Radius (um)')
 
         #add to r_g for that plot 
@@ -405,7 +405,7 @@ def all_optics(out):
     f01a = figure(x_range=[0, yr], y_range=[0,xr],
                            x_axis_label=wavelength_label, y_axis_label=pressure_label,
                            title="Single Scattering Albedo",
-                          plot_width=300, plot_height=300)
+                          width=300, height=300)
 
 
     f01a.image(image=[scat01],  color_mapper=color_mapper, x=0,y=0,dh=xr,dw =yr )

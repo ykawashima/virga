@@ -15,3 +15,6 @@ dist/
 
 # Mac files
 *.DS_Store
+
+# Eliza Kempton's private condensation curves
+virga/reference/condensation_Ts.dat
